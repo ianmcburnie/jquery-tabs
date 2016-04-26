@@ -37,8 +37,6 @@
     "eslint": "^2.4.0",
     "eslint-config-google": "^0.4.0",
     "jquery": "^2.2.3",
-    "jquery-button-flyout": "^0.5.5",
-    "jquery-common-keydown": "0.0.4",
     "jquery-next-id": "0.0.16",
     "jquery-prevent-document-scroll-keys": "^0.3.1",
     "jquery-roving-tabindex": "^0.7.1",
@@ -48,8 +46,6 @@
   },
   "peerDependencies": {
     "jquery": ">=1.11 < 3",
-    "jquery-button-flyout": "^0.5.5",
-    "jquery-common-keydown": "0.0.4",
     "jquery-next-id": "0.0.16",
     "jquery-prevent-document-scroll-keys": "^0.3.1",
     "jquery-roving-tabindex": "^0.7.1"
