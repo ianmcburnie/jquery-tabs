@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Demo: jquery-tabs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style>
+            .tabs > ul:first-child {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            .tabs > ul:first-child > li,
+            .tabs > div:first-child > div {
+                background-color: LightYellow;
+                border: 1px solid #aaa;
+                border-bottom: 0;
+                cursor: pointer;
+                display: inline-block;
+                font-weight: bold;
+                padding: 5px 1em;
+            }
+            .tabs > ul:first-child > li a {
+                color: black;
+                font-weight: normal;
+                text-decoration: none;
+            }
+            .tabs > div:last-child  {
+                border: 1px solid #aaa;
+                box-sizing: border-box;
+                padding: 1em;
+                height: 350px;
+                overflow-y: auto;
+            }
+            .tabs [role=tabpanel] {
+                margin: 1em 0;
+            }
+            .tabs--js [role=tab]:focus {
+                background: #006699;
+                outline: 0;
+            }
+            .tabs--js [role=tab]:focus,
+            .tabs--js [role=tab]:focus a {
+                color: white;
+            }
+            .tabs--js [role=tabpanel] .tabpanel__title {
+                display: none;
+            }
+            .tabs--js [role=tabpanel][aria-hidden=true] {
+                display: none;
+            }
+            .tabs--js [role=tab][aria-selected=true][tabindex="0"] {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div role="main">
+            <h1>Demo: jquery-tabs</h1>
+            <p>jQuery plugin that creates the basic interactivity for an ARIA tabs widget.</p>
+            <p>Don't pay too much attention to the style here, it's only for demonstration purposes ;-)</p>
+
+            <h2>Delivery Services</h2>
+            <div class="tabs">
+                <div>
+                    <div>
+                        <span>USPS</span>
+                    </div>
+                    <div>
+                        <span>UPS</span>
+                    </div>
+                    <div>
+                        <span>FedEx</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="tabpanel__title">USPS</h3>
+                        <p>The <a href="http://en.wikipedia.org/wiki/United_States_Postal_Service">United States Postal Service</a> (originally called the U.S. Post Office Department, when it was completely managed by the U.S. government before 1971) also known as the Post Office, U.S. Mail, or Postal Service, often abbreviated as USPS is an independent agency of the United States federal government responsible for providing postal service in the United States. It is one of the few government agencies explicitly authorized by the United States Constitution.</p>
+                        <p>The USPS traces its roots to 1775 during the Second Continental Congress, where Benjamin Franklin was appointed the first postmaster general. The cabinet-level Post Office Department was created in 1792 from Franklin's operation and transformed into its current form in 1971 under the Postal Reorganization Act.</p>
+                    </div>
+                    <div>
+                        <h3 class="tabpanel__title">UPS</h3>
+                        <p><a href="http://en.wikipedia.org/wiki/United_Parcel_Service">United Parcel Service</a> of North America, Inc., typically referred to and branded as UPS (stylized as ups), is one of the largest shipment and logistics companies in the world. The American global package delivery company is headquartered in Sandy Springs, Georgia, which is part of the Greater Atlanta metropolitan area. UPS delivers more than 15 million packages a day to more than 6.1 million customers in more than 220 countries and territories around the world.[4][5][6]. UPS is known for its brown delivery trucks and uniforms, hence the company nickname "Brown". UPS also operates its own airline and air cargo delivery service (IATA: 5X, ICAO: UPS, Call sign: UPS) based in Louisville, Kentucky.</p>
+                        </div>
+                    <div>
+                        <h3 class="tabpanel__title">FedEx</h3>
+                        <p><a href="http://en.wikipedia.org/wiki/FedEx_Ground">FedEx Ground</a> is a shipping company that is a subsidiary of the FedEx Corporation. It is headquartered in Moon Township, Pennsylvania, a suburb of Pittsburgh. Originally conceived as a lower cost competitor to UPS, Roadway Package System (RPS) was created to take advantage of new barcode, material handling and computer technologies.After beginning service on March 11, 1985, the company grew, expanding service from its initial coverage of the Mid-Atlantic states, so much so that it eventually became the largest subsidiary of its parent company, Akron-based Roadway Services. By 1996, RPS had achieved 100% coverage of the United States and Canada. In addition, Roadway Services had been reformed as a new holding company called Caliber System, Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Delivery Services (Progressive Enhancement)</h2>
+            <div class="tabs">
+                <ul>
+                    <li><a href="#usps">USPS</a></li>
+                    <li><a href="#ups">UPS</a></li>
+                    <li><a href="#fedex">FedEx</a></li>
+                </ul>
+                <div>
+                    <div id="usps" tabindex="-1">
+                        <h3 class="tabpanel__title">USPS</h3>
+                        <p>The <a href="http://en.wikipedia.org/wiki/United_States_Postal_Service">United States Postal Service</a> (originally called the U.S. Post Office Department, when it was completely managed by the U.S. government before 1971) also known as the Post Office, U.S. Mail, or Postal Service, often abbreviated as USPS is an independent agency of the United States federal government responsible for providing postal service in the United States. It is one of the few government agencies explicitly authorized by the United States Constitution.</p>
+                        <p>The USPS traces its roots to 1775 during the Second Continental Congress, where Benjamin Franklin was appointed the first postmaster general. The cabinet-level Post Office Department was created in 1792 from Franklin's operation and transformed into its current form in 1971 under the Postal Reorganization Act.</p>
+                    </div>
+                    <div id="ups" tabindex="-1">
+                        <h3 class="tabpanel__title">UPS</h3>
+                        <p><a href="http://en.wikipedia.org/wiki/United_Parcel_Service">United Parcel Service</a> of North America, Inc., typically referred to and branded as UPS (stylized as ups), is one of the largest shipment and logistics companies in the world. The American global package delivery company is headquartered in Sandy Springs, Georgia, which is part of the Greater Atlanta metropolitan area. UPS delivers more than 15 million packages a day to more than 6.1 million customers in more than 220 countries and territories around the world.[4][5][6]. UPS is known for its brown delivery trucks and uniforms, hence the company nickname "Brown". UPS also operates its own airline and air cargo delivery service (IATA: 5X, ICAO: UPS, Call sign: UPS) based in Louisville, Kentucky.</p>
+                        </div>
+                    <div id="fedex" tabindex="-1">
+                        <h3 class="tabpanel__title">FedEx</h3>
+                        <p><a href="http://en.wikipedia.org/wiki/FedEx_Ground">FedEx Ground</a> is a shipping company that is a subsidiary of the FedEx Corporation. It is headquartered in Moon Township, Pennsylvania, a suburb of Pittsburgh. Originally conceived as a lower cost competitor to UPS, Roadway Package System (RPS) was created to take advantage of new barcode, material handling and computer technologies.After beginning service on March 11, 1985, the company grew, expanding service from its initial coverage of the Mid-Atlantic states, so much so that it eventually became the largest subsidiary of its parent company, Akron-based Roadway Services. By 1996, RPS had achieved 100% coverage of the United States and Canada. In addition, Roadway Services had been reformed as a new holding company called Caliber System, Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="browser.js"></script>
+        <script>
+            $(function() {
+                $('.tabs').tabs().on('tabsSelect', function(e) {
+                    console.log(e.type);
+                });
+            });
+        </script>
+    </body>
+</html>
