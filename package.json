@@ -8,7 +8,7 @@
     "build": "npm run clean && npm run lasso && npm run minify",
     "clean": "rimraf *.min.js lint.txt",
     "fix": "eslint jquery.tabs.js --fix",
-    "lasso": "lasso browser.json --output-dir ./ --minify",
+    "lasso": "lasso browser.json --output-dir ./ --minify && rimraf build",
     "lint": "eslint jquery.tabs.js > lint.txt",
     "minify": "jsmin -o jquery.tabs.min.js jquery.tabs.js"
   },
