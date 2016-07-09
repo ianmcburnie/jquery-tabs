@@ -35,9 +35,9 @@
     "eslint-config-google": "^0.6.0",
     "jquery": ">=1.11",
     "jquery-migrate": "^1.4.1",
-    "jquery-next-id": "0.1.0",
+    "jquery-next-id": "~0.1.0",
     "jquery-prevent-scroll-keys": "~0.5.0",
-    "jquery-roving-tabindex": "^0.8.0",
+    "jquery-roving-tabindex": "~0.9.0",
     "jsmin": "^1.0.1",
     "lasso-cli": "^2.0.6",
     "onchange": "^2.5.0",
@@ -46,8 +46,8 @@
   },
   "peerDependencies": {
     "jquery": ">=1.11",
-    "jquery-next-id": "0.1.0",
+    "jquery-next-id": "~0.1.0",
     "jquery-prevent-scroll-keys": "~0.5.0",
-    "jquery-roving-tabindex": "^0.8.0"
+    "jquery-roving-tabindex": "~0.9.0"
   }
 }
