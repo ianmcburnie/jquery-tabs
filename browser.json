@@ -3,7 +3,7 @@
         {"require-run": "jquery"},
         "jquery-next-id",
         "jquery-roving-tabindex",
-        "jquery-prevent-document-scroll-keys",
+        "jquery-prevent-scroll-keys",
         "jquery.tabs.js"
     ]
 }

@@ -1,11 +1,11 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.1.1
+* @version 0.2.0
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
-* @requires jquery-prevent-document-scroll-keys
+* @requires jquery-prevent-scroll-keys
 */
 (function($) {
     /**
@@ -93,8 +93,8 @@
                 }
             });
 
-            // call plugin to prevent page scroll
-            $('.tabs [role=tab]').preventDocumentScrollKeys();
+            // use a plugin to prevent page scroll
+            $tabsWidget.preventScrollKeys('[role=tab]');
 
             // mark widget as initialised
             $tabsWidget.addClass('tabs--js');
