@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.2.1
+* @version 0.2.2
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
@@ -73,7 +73,7 @@
             });
 
             // Create a roving tab index on tabs
-            $tablist.rovingTabindex($tabs);
+            $tablist.rovingTabindex('> [role=tab]');
 
             $tablist.on('rovingTabindexChange', function(e, selectedTab) {
                 var $selectedTab = $(selectedTab);
