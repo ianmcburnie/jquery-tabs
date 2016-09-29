@@ -115,10 +115,9 @@
         </div>
 
         <script src="browser.js"></script>
-        <script src="node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
         <script>
             $(function() {
-                $('.tabs').tabs().on('tabsSelect', function(e) {
+                $('.tabs').tabs().on('tabsSelect', function(e, data) {
                     console.log(e.type);
                 });
             });

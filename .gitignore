@@ -22,10 +22,7 @@ lint.txt
 # JSDoc
 jsdoc
 
-# Generated javascript for demo page
-browser.js
-
-# Lasso build folder
+# Lasso
 build
-
 .cache
+docs/browser.js.*
