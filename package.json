@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run lasso && parallelshell 'npm run server' 'npm run watch'",
     "prepublish": "npm run clean && npm run lint && npm run build",
-    "build": "npm run clean && npm run lasso && npm run minify",
+    "build": "npm run clean && npm run minify && npm run lasso",
     "clean": "rimraf build .cache docs/browser.js.* lint.txt",
     "fix": "eslint jquery.tabs.js --fix",
     "lasso": "lasso browser.json --output-dir docs --minify",
@@ -40,7 +40,7 @@
     "jquery-migrate": "^3",
     "jquery-next-id": "~0.1",
     "jquery-prevent-scroll-keys": "~0.5",
-    "jquery-roving-tabindex": ">=0.9.1",
+    "jquery-roving-tabindex": "~0.10",
     "jsmin": "^1",
     "lasso-cli": "^2",
     "onchange": "^3",
@@ -52,6 +52,6 @@
     "jquery": ">=1.11",
     "jquery-next-id": "~0.1",
     "jquery-prevent-scroll-keys": "~0.5",
-    "jquery-roving-tabindex": ">=0.9.1"
+    "jquery-roving-tabindex": "~0.10"
   }
 }
