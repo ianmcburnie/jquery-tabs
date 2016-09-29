@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.2.3
+* @version 0.2.4
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
@@ -88,7 +88,7 @@
 
                     setTimeout(function() {
                         $activeTab.attr('aria-selected', 'false');
-                        $tabsWidget.trigger('tabsSelect');
+                        $selectedTab.trigger('tabsSelect', {fromIndex: $activeTab.index(), toIndex: $selectedTab.index()});
                     }, 0);
                 }
             });
