@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.4.2
+* @version 0.4.3
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex

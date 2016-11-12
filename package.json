@@ -35,12 +35,11 @@
   "devDependencies": {
     "browser-sync": "^2",
     "eslint": "^3",
-    "eslint-config-google": "~0.6",
+    "eslint-config-google": "~0.7",
     "jquery": ">=1.11",
-    "jquery-migrate": "^3",
     "jquery-next-id": "~0.1",
     "jquery-prevent-scroll-keys": "~0.5",
-    "jquery-roving-tabindex": "~0.11",
+    "jquery-roving-tabindex": "~0.12",
     "jsmin": "^1",
     "lasso-cli": "^2",
     "onchange": "^3",
@@ -52,6 +51,6 @@
     "jquery": ">=1.11",
     "jquery-next-id": "~0.1",
     "jquery-prevent-scroll-keys": "~0.5",
-    "jquery-roving-tabindex": "~0.11"
+    "jquery-roving-tabindex": "~0.12"
   }
 }
