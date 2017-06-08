@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.4.3
+* @version 0.5.0
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
@@ -18,12 +18,11 @@
 
         return this.each(function onEach() {
             var $tabsWidget = $(this);
-            var $tablist = $tabsWidget.find('> ul:first-child, > ol:first-child, > div:first-child');
-            var $tabs = $tablist.find('> li, > div');
+            var $tablist = $tabsWidget.find('.tabs__items');
+            var $tabs = $tablist.find('.tabs__item');
             var $links = $tablist.find('a');
-            var $panelcontainer = $tabsWidget.find('> div:last-child');
-            var $panels = $panelcontainer.find('> div');
-            var $panelHeadings = $panels.find('> h2:first-child, > h3:first-child');
+            var $panelcontainer = $tabsWidget.find('.tabs__content');
+            var $panels = $panelcontainer.find('.tabs__panel');
 
             // set a unique widget id
             $tabsWidget.nextId('tabs');
@@ -41,11 +40,9 @@
 
             $panels
                 .attr('role', 'tabpanel')
-                .attr('aria-hidden', 'true')
+                .prop('hidden', true)
                 .first()
-                    .attr('aria-hidden', 'false');
-
-            $panelHeadings.attr('aria-hidden', 'true');
+                    .prop('hidden', false);
 
             // remove hyperlink behaviour from links
             $links
@@ -81,8 +78,8 @@
                 var $selectedPanel = $panelcontainer.find('[aria-labelledby={0}]'.replace('{0}', $selectedTab.attr('id')));
 
                 if ($selectedTab[0] !== $activeTab[0]) {
-                    $activePanel.attr('aria-hidden', 'true');
-                    $selectedPanel.attr('aria-hidden', 'false');
+                    $activePanel.prop('hidden', true);
+                    $selectedPanel.prop('hidden', false);
                     $selectedTab.attr('aria-selected', 'true');
 
                     setTimeout(function() {
