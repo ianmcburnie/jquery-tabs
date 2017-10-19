@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.5.0
+* @version 0.5.1
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
@@ -36,13 +36,13 @@
                 .attr('role', 'tab')
                 .attr('aria-selected', 'false')
                 .first()
-                    .attr('aria-selected', 'true');
+                .attr('aria-selected', 'true');
 
             $panels
                 .attr('role', 'tabpanel')
                 .prop('hidden', true)
                 .first()
-                    .prop('hidden', false);
+                .prop('hidden', false);
 
             // remove hyperlink behaviour from links
             $links
@@ -69,7 +69,7 @@
             });
 
             // Create a roving tab index on tabs
-            $tablist.rovingTabindex('[role=tab]', {autoWrap: true, disableHomeAndEndKeys: true});
+            $tablist.rovingTabindex('[role=tab]', { autoWrap: true, disableHomeAndEndKeys: true });
 
             $tablist.on('rovingTabindexChange', '[role=tab]', function(e, data) {
                 var $selectedTab = $(this);
