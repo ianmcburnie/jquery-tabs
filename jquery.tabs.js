@@ -15,7 +15,6 @@
     */
     $.fn.tabs = function tabs(options) {
         options = $.extend({}, options);
-
         return this.each(function onEach() {
             var $tabsWidget = $(this);
             var $tablist = $tabsWidget.find('.tabs__items');
@@ -32,17 +31,38 @@
             $tablist
                 .attr('role', 'tablist');
 
-            $tabs
-                .attr('role', 'tab')
-                .attr('aria-selected', 'false')
-                .first()
-                .attr('aria-selected', 'true');
+            var ariaSelectedList = [];
+            $tabs.each(function onEachTab(idx, el) {
+                var $tab = $(el);
+                var ariaSelectedValue = $tab.attr('aria-selected');
+                if ($tab.attr('aria-selected') != undefined && $tab.attr('aria-selected') == 'true') {
+                    ariaSelectedList.push($tab.attr('aria-selected'));
+                    $panels.eq(idx)
+                        .attr('role', 'tabpanel')
+                        .prop('hidden', false);
+                } else if ($tab.attr('aria-selected') == undefined || $tab.attr('aria-selected') == 'false') {
+                    $tab.attr('aria-selected','false');
+                    ariaSelectedList.push($tab.attr('aria-selected'));
+                    $panels.eq(idx)
+                        .attr('role', 'tabpanel')
+                        .prop('hidden', true)
+                }
+                
+            });
 
-            $panels
-                .attr('role', 'tabpanel')
-                .prop('hidden', true)
-                .first()
-                .prop('hidden', false);
+            if (ariaSelectedList.indexOf('true') == -1) {
+                $tabs
+                    .attr('role', 'tab')
+                    .attr('aria-selected', 'false')
+                    .first()
+                    .attr('aria-selected', 'true');
+
+                $panels
+                    .attr('role', 'tabpanel')
+                    .prop('hidden', true)
+                    .first()
+                    .prop('hidden', false);
+            }
 
             // remove hyperlink behaviour from links
             $links
