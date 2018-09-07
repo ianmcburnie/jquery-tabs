@@ -32,33 +32,36 @@
                 .attr('role', 'tablist');
 
             var ariaSelectedList = [];
+            var ariaSelectedIndex;
+
             $tabs.each(function onEachTab(idx, el) {
                 var $tab = $(el);
-                var ariaSelectedValue = $tab.attr('aria-selected');
-                if ($tab.attr('aria-selected') != undefined && $tab.attr('aria-selected') == 'true') {
+                var ariaSelected = $tab.attr('aria-selected');
+                if (ariaSelected !== undefined && ariaSelected !== false && $tab.attr('aria-selected') === 'true') {
                     ariaSelectedList.push($tab.attr('aria-selected'));
+                    ariaSelectedIndex = idx;
                     $panels.eq(idx)
                         .attr('role', 'tabpanel')
                         .prop('hidden', false);
-                } else if ($tab.attr('aria-selected') == undefined || $tab.attr('aria-selected') == 'false') {
-                    $tab.attr('aria-selected','false');
+                } else if (ariaSelected === undefined || ariaSelected === 'false') {
+                    $tab.attr('aria-selected', 'false');
                     ariaSelectedList.push($tab.attr('aria-selected'));
                     $panels.eq(idx)
                         .attr('role', 'tabpanel')
-                        .prop('hidden', true)
+                        .prop('hidden', true);
                 }
-                
             });
 
-            if (ariaSelectedList.indexOf('true') == -1) {
+            $tabs.attr('role', 'tab');
+            $panels.attr('role', 'tabpanel');
+
+            if (ariaSelectedList.indexOf('true') === -1) {
                 $tabs
-                    .attr('role', 'tab')
                     .attr('aria-selected', 'false')
                     .first()
                     .attr('aria-selected', 'true');
-
+                ariaSelectedIndex = 0;
                 $panels
-                    .attr('role', 'tabpanel')
                     .prop('hidden', true)
                     .first()
                     .prop('hidden', false);
@@ -89,7 +92,11 @@
             });
 
             // Create a roving tab index on tabs
-            $tablist.rovingTabindex('[role=tab]', { autoWrap: true, disableHomeAndEndKeys: true });
+            $tablist.rovingTabindex('[role=tab]', {
+                autoWrap: true,
+                disableHomeAndEndKeys: true,
+                activeIndex: ariaSelectedIndex
+            });
 
             $tablist.on('rovingTabindexChange', '[role=tab]', function(e, data) {
                 var $selectedTab = $(this);
