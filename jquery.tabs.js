@@ -43,7 +43,7 @@
                     $panels.eq(idx)
                         .attr('role', 'tabpanel')
                         .prop('hidden', false);
-                } else if (ariaSelected === undefined || ariaSelected === 'false') {
+                } else if (ariaSelected === undefined || ariaSelected === false) {
                     $tab.attr('aria-selected', 'false');
                     ariaSelectedList.push($tab.attr('aria-selected'));
                     $panels.eq(idx)
