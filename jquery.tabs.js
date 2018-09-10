@@ -1,7 +1,7 @@
 /**
 * @file jQuery plugin that creates the basic interactivity for an ARIA tabs widget
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @version 0.5.1
+* @version 0.5.2
 * @requires jquery
 * @requires jquery-next-id
 * @requires jquery-roving-tabindex
@@ -37,13 +37,13 @@
             $tabs.each(function onEachTab(idx, el) {
                 var $tab = $(el);
                 var ariaSelected = $tab.attr('aria-selected');
-                if (ariaSelected !== undefined && ariaSelected !== false && $tab.attr('aria-selected') === 'true') {
+                if (ariaSelected !== undefined && ariaSelected !== 'false' && ariaSelected === 'true') {
                     ariaSelectedList.push($tab.attr('aria-selected'));
                     ariaSelectedIndex = idx;
                     $panels.eq(idx)
                         .attr('role', 'tabpanel')
                         .prop('hidden', false);
-                } else if (ariaSelected === undefined || ariaSelected === false) {
+                } else if (ariaSelected === undefined || ariaSelected === 'false') {
                     $tab.attr('aria-selected', 'false');
                     ariaSelectedList.push($tab.attr('aria-selected'));
                     $panels.eq(idx)
